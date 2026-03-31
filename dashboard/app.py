@@ -24,19 +24,19 @@ st.markdown("""
 <style>
     .main { background-color: #f8f9fa; }
     .metric-card { background: white; padding: 1rem; border-radius: 10px;
-                   box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
     .churn-high   { color: #e74c3c; font-weight: bold; }
     .churn-medium { color: #f39c12; font-weight: bold; }
     .churn-low    { color: #2ecc71; font-weight: bold; }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🔄 Churn Prediction Dashboard")
+st.title("Churn Prediction Dashboard")
 st.caption("Système de prédiction du churn client — Modèle Voting Classifier (97% accuracy)")
 
 # ── SIDEBAR ──────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.header("⚙️ Paramètres Client")
+    st.header("Paramètres Client")
     gender           = st.selectbox("Genre", ["Male", "Female"])
     senior_citizen   = st.selectbox("Senior Citizen", [0, 1])
     partner          = st.selectbox("Partenaire", ["Yes", "No"])
@@ -48,8 +48,8 @@ with st.sidebar:
     total_charges    = st.number_input("Charges totales ($)", 18.0, 8500.0, float(monthly_charges * tenure or 100))
     payment_method   = st.selectbox("Méthode de paiement",
                         ["Electronic check", "Mailed check",
-                         "Bank transfer (automatic)", "Credit card (automatic)"])
-    predict_btn = st.button("🔍 Prédire le Churn", use_container_width=True)
+                        "Bank transfer (automatic)", "Credit card (automatic)"])
+    predict_btn = st.button(" Prédire le Churn", use_container_width=True)
 
 
 # ── PREDICTION ────────────────────────────────────────────────────────────────
@@ -129,9 +129,9 @@ with tab1:
 
     counts = labels.value_counts()
     fig3 = px.pie(values=counts.values, names=counts.index,
-                  color=counts.index,
-                  color_discrete_map={"Faible": "#2ecc71", "Moyen": "#f39c12", "Élevé": "#e74c3c"},
-                  title="Répartition des niveaux de risque")
+                color=counts.index,
+                color_discrete_map={"Faible": "#2ecc71", "Moyen": "#f39c12", "Élevé": "#e74c3c"},
+                title="Répartition des niveaux de risque")
     st.plotly_chart(fig3, use_container_width=True)
 
 with tab2:
@@ -146,7 +146,7 @@ with tab2:
     df_m = pd.DataFrame(metrics_data)
     st.dataframe(df_m.style.highlight_max(axis=0, color="#d4efdf"), use_container_width=True)
     fig4 = px.bar(df_m, x="Modèle", y=["Accuracy", "AUC-ROC", "F1 Score"],
-                  barmode="group", title="Comparaison des Modèles")
+                barmode="group", title="Comparaison des Modèles")
     st.plotly_chart(fig4, use_container_width=True)
 
 with tab3:

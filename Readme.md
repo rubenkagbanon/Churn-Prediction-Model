@@ -1,4 +1,4 @@
-# 🔄 Churn Prediction Model
+# Churn Prediction Model
 
 > Système de prédiction du churn client utilisant des méthodes d'ensemble — **97% de précision**
 
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🏃 Utilisation
+## Utilisation
 
 ### 1. Générer & préparer les données
 ```bash
@@ -99,7 +99,7 @@ python -m src.predict --serve
 
 ---
 
-## 📊 Résultats
+## Résultats
 
 | Modèle               | Accuracy | AUC-ROC | F1 Score |
 |----------------------|----------|---------|----------|
@@ -109,7 +109,7 @@ python -m src.predict --serve
 
 ---
 
-## 🗄️ Base de données
+##  Base de données
 
 SQLite — fichier `data/churn.db`
 
@@ -120,7 +120,7 @@ Tables :
 
 ---
 
-## 🛠️ Technologies
+##  Technologies
 
 - Python 3.10
 - Scikit-learn, XGBoost, Pandas, NumPy
