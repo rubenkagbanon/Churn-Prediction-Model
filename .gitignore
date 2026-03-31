@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.pkl
+*.h5
+venv/
+.env
+data/raw/
+data/processed/
+data/churn.db
+data/reports/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
