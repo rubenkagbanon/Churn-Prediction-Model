@@ -83,7 +83,7 @@ def save_prediction(customer_id: str, churn_prob: float, prediction: str, model_
     conn = get_connection()
     conn.execute(
         """INSERT INTO predictions (customer_id, churn_prob, prediction, model_version, predicted_at)
-        VALUES (?, ?, ?, ?, ?)""",
+           VALUES (?, ?, ?, ?, ?)""",
         (customer_id, churn_prob, prediction, model_version, datetime.now().isoformat())
     )
     conn.commit()
@@ -95,7 +95,7 @@ def save_metrics(model_name, accuracy, auc_roc, f1, precision, recall):
     conn = get_connection()
     conn.execute(
         """INSERT INTO model_metrics (model_name, accuracy, auc_roc, f1_score, precision_score, recall_score)
-        VALUES (?, ?, ?, ?, ?, ?)""",
+           VALUES (?, ?, ?, ?, ?, ?)""",
         (model_name, accuracy, auc_roc, f1, precision, recall)
     )
     conn.commit()

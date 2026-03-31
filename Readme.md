@@ -79,12 +79,12 @@ python src/preprocess.py
 
 ### 2. Entraîner les modèles
 ```bash
-python src/train.py
+python -m src.train
 ```
 
 ### 3. Évaluer les modèles
 ```bash
-python src/evaluate.py
+python -m src.evaluate
 ```
 
 ### 4. Lancer le dashboard
@@ -94,7 +94,7 @@ streamlit run dashboard/app.py
 
 ### 5. Lancer l'API Flask
 ```bash
-python src/predict.py --serve
+python -m src.predict --serve
 ```
 
 ---

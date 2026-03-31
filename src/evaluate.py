@@ -100,7 +100,7 @@ def evaluate_all():
     X_test, y_test = load_test_data()
     results = []
     model_files = [f for f in os.listdir(MODEL_PATH) if f.endswith(".pkl")
-                and "encoder" not in f and "scaler" not in f]
+                   and "encoder" not in f and "scaler" not in f]
     for mf in model_files:
         name  = mf.replace(".pkl", "")
         model = joblib.load(os.path.join(MODEL_PATH, mf))
