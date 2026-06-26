@@ -40,7 +40,7 @@ def build_models():
     )
     xgb = XGBClassifier(
         n_estimators=300, learning_rate=0.05, max_depth=6,
-        subsample=0.8, colsample_bytree=0.8, use_label_encoder=False,
+        subsample=0.8, colsample_bytree=0.8,
         eval_metric="logloss", random_state=42, n_jobs=-1
     )
     lr = LogisticRegression(C=1.0, max_iter=1000, random_state=42)
